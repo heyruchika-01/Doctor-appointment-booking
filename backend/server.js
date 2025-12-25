@@ -31,37 +31,27 @@
 import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
-
-// ✅ Config imports
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
-
-// ✅ Route imports
 import adminRouter from './routes/adminRoute.js'
 import userRouter from './routes/userRoute.js'
 import doctorRouter from './routes/DoctorRoute.js'
 
-// ----------------------
-// App config
-// ----------------------
 const app = express()
-const PORT = process.env.PORT || 4000
-
-// ----------------------
-// Connect Database & Cloudinary
-// ----------------------
+const PORT = process.env.PORT || 4000;
 connectDB()
 connectCloudinary()
 
-// ----------------------
-// Middlewares
-// ----------------------
 app.use(express.json())
+// const corsOptions = {
+//   origin:[
+//     "http://localhost:5173",
+//     "http://localhost:5174"
+//   ],
+//   credentials:true,
+// }
 app.use(cors())
 
-// ----------------------
-// Routes
-// ----------------------
 app.get('/', (req, res) => {
   res.send('✅ API WORKING')
 })
