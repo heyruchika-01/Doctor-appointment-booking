@@ -130,7 +130,7 @@ const Navbar = () => {
       <div className="flex items-center gap-6">
            {/* ✅ Admin Panel opens the /login page in new tab */}
         <a
-          href="http://localhost:5174/login"
+          href="https://doctor-appointment-booking-admin-2.onrender.com"
           target="_blank"
           rel="noopener noreferrer"
           className="border px-4 py-2 rounded-full font-medium hover:bg-primary hover:text-white transition"
